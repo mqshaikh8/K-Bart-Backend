@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post "/items/add", to: "items#sell"
+  post "/items/buy", to: "items#buy"
   resources :items
   resources :categories
   resources :users

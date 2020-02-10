@@ -3,7 +3,13 @@ k_bart = User.create(username: "k_bart",email:"admin@kbart.com",password:"123abc
 
 
 10.times do 
-   User.create(username: Faker::Games::Overwatch.hero,email:Faker::Internet.email,password:Faker::Crypto.md5,credits:0,bio:Faker::Lorem.words,rating:0)
+   User.create(
+    username: Faker::Games::Overwatch.hero,
+    email:Faker::Internet.email,
+    password:Faker::Crypto.md5,
+    credits:0,
+    bio:Faker::Lorem.words,
+    rating:0)
 end
 category = Category.create(name:"Electronics")
 
