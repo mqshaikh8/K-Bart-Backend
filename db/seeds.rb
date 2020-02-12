@@ -7,7 +7,7 @@ k_bart = User.create(username: "k_bart",email:"admin@kbart.com",password:"123abc
     username: Faker::Games::Overwatch.hero,
     email:Faker::Internet.email,
     password:Faker::Crypto.md5,
-    credits:0,
+    credits:Faker::Number.number(digits: 2),
     bio:Faker::Lorem.words,
     rating:0)
 end
