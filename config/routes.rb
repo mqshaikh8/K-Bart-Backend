@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  post "/items/add", to: "items#sell"
+  get "/persist", to: "users#persist"
+  post "users/login", to: "users#login"
+  post "/items/add", to: "items#add"
   post "/items/buy", to: "items#buy"
+  get "items/personal/:id", to: "items#personal_items"
   resources :items
   resources :categories
   resources :users

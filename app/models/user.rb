@@ -4,5 +4,8 @@ class User < ApplicationRecord
   
     has_many :sold_items, foreign_key: :seller_id, class_name: 'Item'
     has_many :sold, through: :sold_items, source: :buyer
+
+    validates :username, uniqueness: true
+    has_secure_password
   
 end
