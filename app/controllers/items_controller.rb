@@ -19,7 +19,6 @@ class ItemsController < ApplicationController
     end
 
     def buy
-        # byebug
         item = Item.find(params[:item_id])
         user = User.find(params[:buyer_id])
         user.credits -= item.price
