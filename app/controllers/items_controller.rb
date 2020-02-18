@@ -19,13 +19,16 @@ class ItemsController < ApplicationController
     end
 
     def buy
+        
         item = Item.find(params[:item_id])
         user = User.find(params[:buyer_id])
+
         user.credits -= item.price
-
-
         item.seller = item.buyer
+
         item.buyer = user
+        item.update(seller: item.buyer, buyer:user)
+
         render json: item
     end
 
